@@ -27,3 +27,9 @@ bootfix --gui
 backups of everything overwritten are in `%LOCALAPPDATA%\bootfix`; `--log` and `--backup-dir` override.
 
 Exit codes: 0 ok, 1 failed, 2 usage, 3 needs an administrator prompt.
+
+## License
+
+Copyright (C) 2026 Pugnator. GNU General Public License v3.0 or later (`SPDX-License-Identifier: GPL-3.0-or-later`),
+see `LICENSE`. Dear ImGui (`third_party/imgui`) is MIT-licensed by its own authors. The boot-code blobs in
+`bootcode/` are byte copies of Microsoft's boot sectors as shipped in Windows 10 and are not covered by this license.
