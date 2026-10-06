@@ -1,3 +1,4 @@
 build/
 *.log
-bootfix-backup-*.bin
+*.user
+.vs/
