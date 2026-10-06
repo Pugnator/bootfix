@@ -1,0 +1,31 @@
+{
+  "profile": "bootfix 0.2.0",
+  "subcommands": ["scan", "fixmbr", "fixboot", "bcd", "help", "version"],
+  "aliases": [],
+  "list_command": ["scan"],
+  "failing": [
+    {"args": ["fixmbr"], "exit": 2},
+    {"args": ["fixboot"], "exit": 2},
+    {"args": ["bcd"], "exit": 2},
+    {"args": ["bcd", "set"], "exit": 2},
+    {"args": ["bcd", "export"], "exit": 2},
+    {"args": ["nosuchcommand"], "exit": 2},
+    {"args": ["scan", "--disk", "notanumber"], "exit": 2}
+  ],
+  "option_order": [["scan", "--json"], ["--json", "scan"]],
+  "positional_command": ["fixboot"],
+  "destructive": [
+    {"args": ["fixmbr", "--disk", "99"]},
+    {"args": ["fixboot", "Q:"]},
+    {"args": ["bcd", "delete", "--entry", "{memdiag}", "--live"]}
+  ],
+  "long_running": {
+    "args": ["scan"],
+    "first_output_ms": 100,
+    "interrupt_after_s": 1.0,
+    "exit_within_s": 5.0
+  },
+  "reads_stdin": [],
+  "allow_files": [],
+  "prompts": true
+}
